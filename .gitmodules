@@ -1,0 +1,3 @@
+[submodule "JavaTube"]
+	path = JavaTube
+	url = git@github.com:cybernhl/JavaTube.git

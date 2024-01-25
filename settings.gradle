@@ -1,0 +1,37 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        google()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url = uri('https://maven.pkg.jetbrains.space/public/p/compose/dev')
+        }
+        maven{
+            url "https://raw.githubusercontent.com/cybernhl/maven-repository/master/"
+        }
+    }
+}
+rootProject.name = 'YouTubeRelation'
+include ':JavaTube'
+project(":JavaTube").projectDir = file("./JavaTube/JavaTube")
+include ':app'
+project(":app").projectDir = file("./android")
+//dependencyResolutionManagement {
+//    repositories {
+//        gradlePluginPortal()
+//        mavenCentral()
+//        google()
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//        }
+//        maven {
+//            url = uri('https://maven.pkg.jetbrains.space/public/p/compose/dev')
+//        }
+//        maven{
+//            url "https://raw.githubusercontent.com/cybernhl/maven-repository/master/"
+//        }
+//    }
+//}

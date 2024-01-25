@@ -1,0 +1,37 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import org.gradle.util.internal.VersionNumber
+buildscript {
+    ext {
+        kotlin_version = "1.9.20"
+    }
+}
+
+allprojects {
+    repositories {
+        gradlePluginPortal()
+        maven{
+            url "https://raw.githubusercontent.com/cybernhl/maven-repository/master/"
+        }
+        mavenCentral()
+        google()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url = uri('https://maven.pkg.jetbrains.space/public/p/compose/dev')
+        }
+    }
+
+    //https://www.baeldung.com/java-comparing-versions
+////    println "Show  current define room version  : ${room_version}"
+//    def room_version = VersionNumber.parse( room_version )
+//    def target_room_version = VersionNumber.parse("2.4.0-alpha03")
+//    println "Show  current define room ver  : ${room_version.minor}"
+//    println "Show  target_room_version  : ${target_room_version.minor}"
+//    println "Show  compareTo  : ${room_version.compareTo(target_room_version)}"
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
